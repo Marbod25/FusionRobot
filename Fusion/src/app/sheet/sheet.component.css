@@ -1,0 +1,20 @@
+.jumbotron{
+    margin: 30px;
+    height: 640px;
+    width: 1475px;
+    position: relative;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.card{
+    text-align: center;
+    width: 150px;
+    height: 500px;
+    margin-right: 10px;
+}

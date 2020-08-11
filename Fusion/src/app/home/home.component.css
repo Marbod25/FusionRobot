@@ -1,0 +1,13 @@
+.container{
+    margin-top: 250px;
+    text-align: center;
+}
+
+.jumbotron{
+    height: 300px;
+}
+
+h4{
+    font-family: sans-serif;
+    color: black;
+}
