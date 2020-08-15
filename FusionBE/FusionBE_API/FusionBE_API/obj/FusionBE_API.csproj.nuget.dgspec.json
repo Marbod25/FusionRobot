@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marbo\\source\\repos\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj": {}
+    "C:\\Users\\marbo\\git\\Fusion\\FusionRobot\\FusionBE\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marbo\\source\\repos\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj": {
+    "C:\\Users\\marbo\\git\\Fusion\\FusionRobot\\FusionBE\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marbo\\source\\repos\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj",
+        "projectUniqueName": "C:\\Users\\marbo\\git\\Fusion\\FusionRobot\\FusionBE\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj",
         "projectName": "FusionBE_API",
-        "projectPath": "C:\\Users\\marbo\\source\\repos\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj",
+        "projectPath": "C:\\Users\\marbo\\git\\Fusion\\FusionRobot\\FusionBE\\FusionBE_API\\FusionBE_API\\FusionBE_API.csproj",
         "packagesPath": "C:\\Users\\marbo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marbo\\source\\repos\\FusionBE_API\\FusionBE_API\\obj\\",
+        "outputPath": "C:\\Users\\marbo\\git\\Fusion\\FusionRobot\\FusionBE\\FusionBE_API\\FusionBE_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,32 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[13.7.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\marbo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\marbo\\.nuget\\packages"
+    ]
+  }
+}

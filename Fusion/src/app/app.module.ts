@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { SheetComponent } from './sheet/sheet.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ViewComponent } from './view/view.component';
+import { SelectorComponent } from './selector/selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SheetComponent,
-    ViewComponent
+    ViewComponent,
+    SelectorComponent
   ],
   imports: [
     AppRoutingModule,
