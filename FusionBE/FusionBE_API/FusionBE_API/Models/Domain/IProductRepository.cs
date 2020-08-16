@@ -9,7 +9,6 @@ namespace FusionBE_API.Models.Domain
     {
         IEnumerable<Product> GetAll();
         Product GetBy(int id);
-        Product GetByName(string productName);
-        void SaveChanges();
+        IEnumerable<Product> GetByCategory(string category);
     }
 }

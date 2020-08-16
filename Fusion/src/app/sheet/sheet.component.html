@@ -3,13 +3,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">            
                 <li class="nav-item">
-                    <a class="nav-link text-light">Cocktails</a>
+                    <a class="nav-link text-light" data-toggle="modal" data-target="#selectCocktail" >Cocktails</a>
+                    <div class="modal fade" id="selectCocktail" tabindex="-1" role="dialog" aria-labelledby="selectCocktailLabel" aria-hidden="true">
+                        <app-selector [category]="'cocktail'"></app-selector>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light">Mocktails</a>
+                    <a class="nav-link text-light" data-toggle="modal" data-target="#selectMocktail">Mocktails</a>
+                    <div class="modal fade" id="selectMocktail" tabindex="-1" role="dialog" aria-labelledby="selectMocktailLabel" aria-hidden="true">
+                        <app-selector [category]="'mocktail'"></app-selector>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light">Lemonades</a>
+                    <a class="nav-link text-light" data-toggle="modal" data-target="#selectLemonade">Lemonades</a>
+                    <div class="modal fade" id="selectLemonade" tabindex="-1" role="dialog" aria-labelledby="selectLemonadeLabel" aria-hidden="true">
+                        <app-selector [category]="'lemonade'"></app-selector>
+                    </div>
                 </li>
             </ul>
         </div>

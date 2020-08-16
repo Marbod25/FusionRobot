@@ -29,5 +29,16 @@ namespace FusionBE_API.Controllers
         {
             return _productRepository.GetAll();
         }
+
+        // GET: api/Product
+        /// <summary>
+        /// Get all products from category ordered by name
+        /// </summary>
+        /// <returns>array of products</returns>
+        [HttpGet("{category}")]
+        public IEnumerable<Product> GetProductsByCategory(string category)
+        {
+            return _productRepository.GetByCategory(category);
+        }
     }
 }

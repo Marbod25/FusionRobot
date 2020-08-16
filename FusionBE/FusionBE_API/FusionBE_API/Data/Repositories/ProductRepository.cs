@@ -1,5 +1,6 @@
 ﻿using FusionBE_API.Models;
 using FusionBE_API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -10,24 +11,27 @@ namespace FusionBE_API.Data.Repositories
 {
     public class ProductRepository : IProductRepository
     {
+        private readonly FusionContext _context;
+        private readonly DbSet<Product> _products;
+
+        public ProductRepository(FusionContext dbContext)
+        {
+            _context = dbContext;
+            _products = dbContext.Products;
+        }
         public IEnumerable<Product> GetAll()
         {
-            throw new NotImplementedException();
+            return this._products.Include(p => p.Ingredients);
         }
 
         public Product GetBy(int id)
         {
-            throw new NotImplementedException();
+            return this._products.Include(p => p.Ingredients).FirstOrDefault(p => p.ProductId == id);
         }
 
-        public Product GetByName(string productName)
+        public IEnumerable<Product> GetByCategory(string category)
         {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            throw new NotImplementedException();
+            return this._products.Include(p => p.Ingredients).Where(p => p.Category == category);
         }
     }
 }

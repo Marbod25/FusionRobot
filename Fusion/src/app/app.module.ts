@@ -7,6 +7,10 @@ import { SheetComponent } from './sheet/sheet.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ViewComponent } from './view/view.component';
 import { SelectorComponent } from './selector/selector.component';
+import { httpInterceptorProviders } from './interceptors';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './product/product.component';
+
 
 @NgModule({
   declarations: [
@@ -14,13 +18,15 @@ import { SelectorComponent } from './selector/selector.component';
     HomeComponent,
     SheetComponent,
     ViewComponent,
-    SelectorComponent
+    SelectorComponent,
+    ProductComponent
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

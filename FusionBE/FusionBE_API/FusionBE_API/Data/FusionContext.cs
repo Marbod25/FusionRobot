@@ -27,9 +27,9 @@ namespace FusionBE_API.Data
             builder.Entity<Ingredient>().Property(i => i.CategoryEnum).HasColumnType("NVARCHAR(50)").IsRequired();
 
             builder.Entity<Product>().HasData(
-                 new { ProductId = 1, ProductName = "Healthy Blood" },
-                 new { ProductId = 2, ProductName = "Basil Wonder" },
-                 new { ProductId = 3, ProductName = "Ferdinand" }
+                 new { ProductId = 1, ProductName = "Healthy Blood", Category = "Cocktail" },
+                 new { ProductId = 2, ProductName = "Basil Wonder", Category = "Mocktail" },
+                 new { ProductId = 3, ProductName = "Ferdinand", Category = "Lemonade" }
                  /*new { ProductId = 4, ProductName = "Cosmonaut", Description = "A marvelous drink", CategoryId = 1 },
                  new { ProductId = 5, ProductName = "Bee Happy", Description = "A marvelous drink", CategoryId = 1 },
                  new { ProductId = 6, ProductName = "Daring Margarita", Description = "A marvelous drink", CategoryId = 1 },

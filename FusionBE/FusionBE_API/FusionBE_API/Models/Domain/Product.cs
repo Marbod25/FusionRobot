@@ -12,6 +12,7 @@ namespace FusionBE_API.Models
         public int ProductId { get; internal set; }
         public string ProductName { get; set; }
         public ICollection<Ingredient> Ingredients { get; set; }
+        public string Category { get; set; }
         #endregion
         #region Constructors
         public Product()
