@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SheetComponent } from './sheet/sheet.component';
@@ -10,6 +10,8 @@ import { SelectorComponent } from './selector/selector.component';
 import { httpInterceptorProviders } from './interceptors';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ProductComponent } from './product/product.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

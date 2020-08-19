@@ -1,48 +1,34 @@
 <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="label">Select your {{category}}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body choice-modal" >
-            <div class="container-fluid">
-             <div class="row inner-scroll" >
-                   <div class="col-md-2">
-                     <div class="gallery-card">
-                       <div class="gallery-card-body">
-                         <label class="block-check">
-                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBIQEBAVFRIXDQ0ODQ0ODg8VDRANIBEWFiARHxUkHCggJCYlJx8TITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0ODg4NDjcZFRkrKy0rLTcrNy0tKysrLisrLS0rNystLSsrNys3LS03KysrLSsrLSs3KzcrKysrKysrLf/AABEIAJYAZAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIDBgcFBAj/xAA2EAACAgEDAgQEBQIFBQAAAAABAgARAwQSIQUxBgcTQSIyUWEUcYGR8KGxFSNCUvEzYmSC0f/EABkBAQEBAAMAAAAAAAAAAAAAAAABAgMEBf/EACARAQEAAgICAgMAAAAAAAAAAAABAhEhMQNBBFESInH/2gAMAwEAAhEDEQA/AMNhCEAiwEIBCo4CKRAZUAP+I/bFxjn/ANSf6QIoRahASEIQCEIQCEIQFEcBEAj1EBQJ7emdMzanIMWDGXciwoHAUdySeAB7k8Sbw/oBqNTiwsaVnpiO+0Ak196FfrNeXoydP0Gp1GnXa94STSncocDaQQQe5PII96vkTK6lv01JtTcflRrim45cANWEORif3AqVfrnh/UaJympxlCRSMCGxuLFlXHB/LuPpNaT8e+g/HnVUA1emCwv4q7XVe1cSDpGm/wAX0WoTVd1z41V0VQQdlhxY4PBBPuDzc63i+VPJlcZOm8sNTbEmEbUuHjjwovTziKZGdX3j41AKsKNWODYP9JU2Wdpx2aRxI4iNhBCEIBFAgIoEBwEkURqiejT4WdgqKWYsqqihi7MeAoA5JP0EqrH5dYwdchbsuPI5IDGuABwPua/WbH14D/C9Up4BwXiDHllV0ugee4qc7y28CtgwXm/y875VyZl4ZxhA+BAQaBsknvzxLi/h/Hj3Fwc2NgpfE6o44HzAEdx9uZnPG3HKTtrH1tl2THqMI0+kzsBgy+jmIRlKbGat5PYEC+/aWXw9jwYcmv0umyAj1sL4S2RbYDF8RvsQDxf5SzDw/wBMYWMHt2LOAP62JNi6XiCFMOHYCPhXGiqA275yTya+/A/aef4PjZ4Z/lenNlnjZplfm/q09DFhBG9sq5dvchACLvt3NTKGWbV5t+DMpx4tRiUOcYOLIFKhihawwB7kGhQ55mNZEo0fqQQRRBHcET0ZNRwZPMyyMiTsJEwhDIRYkIUCPAjRHgQHqJrfkl0UA5Nc63QbDgsWVqizgfXlRY9r+syVBPoTyuxhenaUghfgfcrcKxZ3JNgcGqlX2ueQeptfHaupIxswrcxXkEe47fwT1dP1vqjZkTa90R7FgCbH17GcnqWqbEcR73lRbU7qBPJI9gO5/KdJn3ZEVGT1AhzAFb2obAN+wJsfejDVnHDqjTJd7Rfcmvec/X6IswKs3B9nYba5/UduPznEbxDnbH6pxk4RiOR2xfOUFn4aBNULucvN1heo6DP+FyHT7DiyetqX2o+M8m3BNXX1+n1lktrGWWu111OBcnwOAw2jcrBSD8Xev0uYt53+FMeL09dgFbmXFqVAUW234cvHcnkE+5qab0nVqEAXKzr6eJceclWdqBsEjgkGwePbmcHzOxer0zVH53GJCCVYFVVw5IHY0ATJeLw1N65fObCQuJ6HEgYSMo6hFqEAEeIwR6iBIgn0b5cYWGh0xHKnS4moiqauQQe/PvPnIH+xn1D4Qx+nocA/26XCK/7gn/2WLD2yb86qKO0O2RVFIoIKKpPuSTf2AM8/WeshcuPQY3/z82MliB8qAGlsdr5r7An6Xy+ieJcWqDvgB/6i48vwkU+3nk9z9K4ozodI0mnXVsSU9cqcpLvuzbeBursBQA4rgD6Sb54bkiTy6bXKmRNZkU0VTBhtN+NF4BFADaRVDkivaevxL0FM+ny6cEoA41OP0gqlXBJNAcEE3Yru08B1JfVZEONkQPa6imIZj/qFoB7cgEzoDXvjZQXD4923kU4tfYkm+Zq5c7ZmE6ePwZ0Z9KvoHMzrubNhdFUIULD4CTdkUCSPrJ/MV8o6dqxhFv8Ahc1sQu1Er4uT77Qalb1niFtP1vT6R6GkdVfThQwrMyFNpF1V2KruQfpLX5gZgOmas/8AiZgRX1Qjt+ZEb3d0s1xHyw3/ABImkrSJpllGRCLCFII4RgjxCHibp4Z8VM+iVXAs4gpyNuBsit9CgLNE0e/MwtTLX0LXqNBq8bn5UQYjZB3NdIK5HIH7x/F3pdfKXoeTFk1fr7htyjTnGGamcKSX+/BFH6GaW+hwrkVnQLeIoroFOTaGBJJ70LH25lV8tXZtDifLkZncFy7G/iBIWzV8KAK+gl4xZfh5+lMtqQfYy6iy1G2PHXA+XaQaXefezXfiS59IuRGUrxVAgcg+zD6Tm4NWVzZEFbPSDbh3UgkBTf2/tPbm6qFxlRe/bQYigrH3v3Pv+0XUi874ZF42zNreoYNIMbYn0pd9Tqcm5KQMhLrXNcAg2CSRVSy+PvFezRZ1RLyNiOFXYb0RCQDwe5onk3z+U43mTqBgGmORsgTIdSmYIzF8mIBHGMk9lLUTX3meeIuveuNiM+3ezZN24LkPBB7/AFvih7Sc64Teu3AMY0UmNMIQiEQxYNmCPEjEeDCHrJFMiEkBgbt4Pdsei0vwmvw2IgjkMtXfH6/lLTn1xGPcBXw3Z2j85SPKvqeT8AFyfIuV007UxLIGBKke1EkA/b7SyajU77HyLRPAoBRyfy9zDccToPWjm1mpx99i4WJH0N33+nH7yzarX46FMDxYAVt5Y139h2mdeXuX1X12oH+rUYgoP+whyB+xH7S463KEHym6sKF5+5P2+8lJWc+a/Xcepy4sWNy3otqA6kN/lklAEs9zQ57ygEyxeO1A1jEd2xYmcEUboi/2AlbJidM3mluNMLgJQVCFQgRAx4Mji1CJQY4GQiOEDWfKXrNY2wGqXIWKsLAVjw372D+k0PqDoRTOqhlpk2rZX3+/7zIfKzTE5cuQA8KmE0fhG4k2R7/KK5FcnmWfxn1NtJpMi/H62RdvrbaRSxI2g9rABFew57zPtudbcXyo1WP8TqdM7UmTEGQ3VOmUgEfemmmDp+QWroHG3bvVqcr7VZnzv0rXHBmTKo+VrK+zIeCp/MEibv0freTNgBAKoEvflDeps2ghrHBFWL79uJaY/THPHOly4tdnTKwZtysrDscZW1FWaIFAj2IMrxM7njLM763MchFh2Va3Vs7jvzZBvn6zhsJYzezLjgYmyLthBcIVCAwfzmOA/lQEdAAv8qAEUD+ERa/ggaz5d67FptHtfKwZicm3Y3pqDVAEDknuSfsBxOJ5jeJV1SjCMYBGS1dMinGwHdyK4PsPsTK3g68yoE2jhQAQzAcCrIqczNlLsWPf+01lMdSztjDLPdmXSIJNt8H+KNM+nAFYQpRVV33ZCoHzXR7EHiqmK3Pb03qTYDwLF2VJqm+oMmMlv7NZXKTePbveZao+s9bHl3h05pFRlI4o0BfB4J5oUe0qNT3dU6gc5B21W6husm54ZcpJdRMblZvIhjajjGzLRtQjq/lRICCOuJCAXHCEICgxbhCAtwuEICGITCEBIkIQohCED//Z" class="img-responsive" />
-                        <input type="checkbox" checked>
-                         <span class="checkmark"></span>
-                         </label>
-                          <div class="mycard-footer">
-                           <a href="#" class="card-link">Science</a>
-                           </div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class=" col-md-2">
-                     <div class="gallery-card">
-                       <div class="gallery-card-body">
-                         <label class="block-check">
-                        <img src="https://i.pinimg.com/736x/18/fc/c3/18fcc378c67c941f028dd37008df24fe--redd-foxx-funny-people.jpg" class="img-responsive" />
-                        <input type="checkbox" >
-                         <span class="checkmark"></span>
-                         </label>
-                          <div class="mycard-footer">
-                           <a href="#" class="card-link">Books</a>
-                           </div>
-                       </div>
-                     </div>
-                   </div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="label">Select your {{category}}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form [formGroup]="productsGroup" (ngSubmit)='onSubmit()'>
+      <div class="modal-body choice-modal">
+        <div class="container-fluid">
+          <div class="row inner-scroll" *ngIf="(products$ | async) as products">
+            <div class="col-md-2" *ngFor="let product of products">
+              <div class="form-group">
+                <div class="gallery-card">
+                  <div class="gallery-card-body">
+                    <label>
+                      <app-product [product]="product"></app-product>
+                      <input type="checkbox" [value]="product.name" (change)="onCheckChange($event)">
+                      {{product.name}}
+                    </label>
+                  </div>
                 </div>
+              </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
-          </div>
         </div>
-    </div>
-
+      </div>
+      <div class="modal-footer">
+        <button mat-raised-button type="submit" class="btn btn-primary">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
