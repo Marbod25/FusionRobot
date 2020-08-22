@@ -4,6 +4,7 @@ import { map, catchError, tap, shareReplay, switchMap } from 'rxjs/operators';
 import { Product } from './product.model';
 import { Observable, throwError, BehaviorSubject, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Ingredient } from './ingredient.model';
 
 @Injectable({
     providedIn: 'root'
@@ -11,6 +12,7 @@ import { environment } from 'src/environments/environment';
   export class ProductDataService {
     private _products$ = new BehaviorSubject<Product[]>([]);
     private _products: Product[];
+    
     constructor(private http : HttpClient) {
         this.product$
         .pipe(
@@ -37,6 +39,21 @@ import { environment } from 'src/environments/environment';
     getProduct$(category: any): Observable<Product[]>
     {
       return this.http.get(`${environment.apiUrl}/Product/${category}`).pipe(catchError(this.handleError), map((list: any[]): Product[] => list.map(Product.fromJSON)));
+    }
+
+    getProductByName(name: any): Observable<Product>
+    {
+      return this.http.get(`${environment.apiUrl}/Product/ByName/${name}`).pipe(catchError(this.handleError), map(Product.fromJSON));
+    }
+    
+    getDrinksOfProduct(name: any): Observable<Ingredient[]>
+    {
+      return this.http.get(`${environment.apiUrl}/Product/Drinks/${name}`).pipe(catchError(this.handleError), map((list: any[]): Ingredient[] => list.map(Ingredient.fromJSON)));
+    }
+
+    getFruitsOfProduct(name: any): Observable<Ingredient[]>
+    {
+      return this.http.get(`${environment.apiUrl}/Product/Fruits/${name}`).pipe(catchError(this.handleError), map((list: any[]): Ingredient[] => list.map(Ingredient.fromJSON)));
     }
 
     handleError(err: any): Observable<never>

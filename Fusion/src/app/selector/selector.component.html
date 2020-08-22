@@ -16,8 +16,8 @@
                   <div class="gallery-card-body">
                     <label>
                       <app-product [product]="product"></app-product>
+                      <p>{{product.name}}</p>
                       <input type="checkbox" [value]="product.name" (change)="onCheckChange($event)">
-                      {{product.name}}
                     </label>
                   </div>
                 </div>

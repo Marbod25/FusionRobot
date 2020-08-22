@@ -13,11 +13,13 @@ namespace FusionBE_API.Models
         public string ProductName { get; set; }
         public ICollection<Ingredient> Ingredients { get; set; }
         public string Category { get; set; }
+        public ICollection<string> Stappen { get; set; }
         #endregion
         #region Constructors
         public Product()
         {
             Ingredients = new List<Ingredient>();
+            Stappen = new List<string>();
         }
         #endregion
         /* Methodes om op te roepen */

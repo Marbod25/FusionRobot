@@ -11,6 +11,8 @@ import { httpInterceptorProviders } from './interceptors';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
+import { ProductcardComponent } from './productcard/productcard.component';
 
 
 
@@ -21,7 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     SheetComponent,
     ViewComponent,
     SelectorComponent,
-    ProductComponent
+    ProductComponent,
+    CardComponent,
+    ProductcardComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,9 @@
+label{
+    width: 140px;
+    margin-top: 0;
+}
+
+.card{
+    background-color: lightblue;
+    padding: 5px;
+}

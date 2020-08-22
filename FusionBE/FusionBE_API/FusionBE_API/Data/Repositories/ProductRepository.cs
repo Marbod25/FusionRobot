@@ -33,5 +33,10 @@ namespace FusionBE_API.Data.Repositories
         {
             return this._products.Include(p => p.Ingredients).Where(p => p.Category == category);
         }
+
+        public Product GetByName(string name)
+        {
+            return this._products.Include(p => p.Ingredients).FirstOrDefault(p => p.ProductName == name);
+        }
     }
 }

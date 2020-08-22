@@ -1,0 +1,16 @@
+<div class="card" *ngIf="!greenCard">
+    <div class="card-title">
+        <h5>{{product.name}}</h5>
+    </div>
+    <div *ngFor="let stap of product.stappen">
+        <app-card [stap]="stap" (allChecked)="receiveChecks($event)"></app-card>
+    </div> 
+</div>
+
+<div class="card green" *ngIf="greenCard">
+    <div class="card-title">
+        <h5>{{product.name}}</h5>
+    </div>
+    <h1>DONE!</h1>
+</div>
+

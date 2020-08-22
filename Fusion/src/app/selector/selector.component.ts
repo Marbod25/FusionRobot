@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductDataService } from '../product-data.service';
 import { catchError } from 'rxjs/operators';
 import { Product } from '../product.model';
@@ -16,6 +16,8 @@ export class SelectorComponent implements OnInit {
   public errorMessage: string = '';
   public products: Product[];
   public productsGroup: FormGroup;
+  @Output() eventArray = new EventEmitter<string[]>();
+
 
   constructor(private _productDataService: ProductDataService, private fb : FormBuilder) { }
 
@@ -36,7 +38,7 @@ export class SelectorComponent implements OnInit {
 
   onSubmit() {
     //Submit de producten die gekozen zijn en geef ze door aan sheet zodat fases kunnen doorlopen worden
-    console.log(this.productsGroup.get('names'))
+    this.eventArray.emit(this.productsGroup.get('names').value);
   }
 
   get names(): FormArray
@@ -64,6 +66,5 @@ export class SelectorComponent implements OnInit {
         i++;
       });
     }
-
   }
 }

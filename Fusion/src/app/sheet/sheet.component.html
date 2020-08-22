@@ -5,30 +5,44 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" data-toggle="modal" data-target="#selectCocktail" >Cocktails</a>
                     <div class="modal fade" id="selectCocktail" tabindex="-1" role="dialog" aria-labelledby="selectCocktailLabel" aria-hidden="true">
-                        <app-selector [category]="'cocktail'"></app-selector>
+                        <app-selector [category]="'cocktail'" (eventArray)="receiveMessage($event)"></app-selector>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" data-toggle="modal" data-target="#selectMocktail">Mocktails</a>
                     <div class="modal fade" id="selectMocktail" tabindex="-1" role="dialog" aria-labelledby="selectMocktailLabel" aria-hidden="true">
-                        <app-selector [category]="'mocktail'"></app-selector>
+                        <app-selector [category]="'mocktail'" (eventArray)="receiveMessage($event)"></app-selector>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" data-toggle="modal" data-target="#selectLemonade">Lemonades</a>
                     <div class="modal fade" id="selectLemonade" tabindex="-1" role="dialog" aria-labelledby="selectLemonadeLabel" aria-hidden="true">
-                        <app-selector [category]="'lemonade'"></app-selector>
+                        <app-selector [category]="'lemonade'" (eventArray)="receiveMessage($event)"></app-selector>
                     </div>
                 </li>
+                <img src="https://fusioncocktails.be/wp-content/uploads/FUSION_W_250.png" alt="Fusion" />
             </ul>
         </div>
     </nav>
     <div class="row">
-        <div class="card">
-            <div class="card-title">Started</div>
+        <div *ngFor="let product of productArray">
+            <app-productcard [product]="product"></app-productcard>
         </div>
-        <div class="card">
-            <div class="card-title">Started</div>
+    </div>
+</div>
+<div class="jumbotron info">
+    <div class="row">
+        <div class="col-md-7">
+            <h5>Drank koel zetten:</h5>
+            <div *ngFor="let i of drinksArray">
+                {{i.name}}   -   {{i.amount}}{{i.unit}}
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h5>Fruit persen:</h5>
+            <div *ngFor="let i of fruitsArray">
+                {{i.name}}   -   {{i.amount}}{{i.unit}}
+            </div>
         </div>
     </div>
 </div>

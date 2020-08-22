@@ -1,5 +1,6 @@
 ﻿using FusionBE_API.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +21,18 @@ namespace FusionBE_API.Data
             base.OnModelCreating(builder);
 
             builder.Entity<Product>().Property(p => p.ProductName).IsRequired().HasMaxLength(50);
-            builder.Entity<Product>().HasMany(p => p.Ingredients).WithOne().IsRequired().HasForeignKey("ProductId"); ;
+            builder.Entity<Product>().HasMany(p => p.Ingredients).WithOne().IsRequired().HasForeignKey("ProductId");
+            var splitStringConverter = new ValueConverter<ICollection<string>, string>(v => string.Join(";", v), v => v.Split(new[] { ';' }));
+            builder.Entity<Product>().Property(p => p.Stappen).HasConversion(splitStringConverter);
 
             builder.Entity<Ingredient>().Property(i => i.Amount).IsRequired();
             builder.Entity<Ingredient>().Property(i => i.Unit).IsRequired().HasMaxLength(10);
             builder.Entity<Ingredient>().Property(i => i.CategoryEnum).HasColumnType("NVARCHAR(50)").IsRequired();
 
             builder.Entity<Product>().HasData(
-                 new { ProductId = 1, ProductName = "Healthy Blood", Category = "Cocktail" },
-                 new { ProductId = 2, ProductName = "Basil Wonder", Category = "Mocktail" },
-                 new { ProductId = 3, ProductName = "Ferdinand", Category = "Lemonade" }
+                 new { ProductId = 1, ProductName = "Healthy Blood", Category = "Cocktail", Stappen = new List<string> { "Drank koel zetten", "Fruit persen" } },
+                 new { ProductId = 2, ProductName = "Basil Wonder", Category = "Mocktail", Stappen = new List<string> { "Drank koel zetten", "Fruit persen" } },
+                 new { ProductId = 3, ProductName = "Ferdinand", Category = "Lemonade", Stappen = new List<string> { "Drank koel zetten", "Fruit persen" } }
                  /*new { ProductId = 4, ProductName = "Cosmonaut", Description = "A marvelous drink", CategoryId = 1 },
                  new { ProductId = 5, ProductName = "Bee Happy", Description = "A marvelous drink", CategoryId = 1 },
                  new { ProductId = 6, ProductName = "Daring Margarita", Description = "A marvelous drink", CategoryId = 1 },
@@ -54,7 +57,8 @@ namespace FusionBE_API.Data
             builder.Entity<Ingredient>().HasData(
                 new { IngredientId = 1, IngredientName = "Whiskey", CategoryEnum = CategoryEnum.Drank, Amount = 5000.00, Unit = "ml", ProductId = 1 },
                 new { IngredientId = 2, IngredientName = "Whiskey", CategoryEnum = CategoryEnum.Drank, Amount = 5000.00, Unit = "ml", ProductId = 2 },
-                new { IngredientId = 3, IngredientName = "Whiskey", CategoryEnum = CategoryEnum.Drank, Amount = 5000.00, Unit = "ml", ProductId = 3 }
+                new { IngredientId = 3, IngredientName = "Whiskey", CategoryEnum = CategoryEnum.Drank, Amount = 5000.00, Unit = "ml", ProductId = 3 },
+                new { IngredientId = 4, IngredientName = "Raspberry", CategoryEnum = CategoryEnum.Fruit, Amount = 50.00, Unit = "g", ProductId = 3 }
                 ) ;
         }
 

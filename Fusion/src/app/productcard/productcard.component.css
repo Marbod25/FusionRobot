@@ -1,0 +1,10 @@
+.card{
+    text-align: center;
+    width: 150px;
+    height: 500px;
+    margin-right: 10px;
+}
+
+.green{
+    background-color: lightgreen;
+}
